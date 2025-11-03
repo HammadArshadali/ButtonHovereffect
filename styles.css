@@ -1,0 +1,132 @@
+ /* Add Body and Container Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+/* Add Button Styles */
+.btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+/* Button 1: Scale Effect */
+.btn-1::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: scale(0);
+  transition: transform 0.3s ease;
+  z-index: -1;
+}
+
+.btn-1:hover::before {
+  transform: scale(1);
+}
+
+/* Button 2: Slide In Effect */
+.btn-2::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: -1;
+}
+
+.btn-2:hover::before {
+  transform: translateX(0);
+}
+
+/* Button 3: Rotate and Scale Effect */
+.btn-3::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: rotate(45deg) scale(0);
+  transition: transform 0.3s ease;
+  z-index: -1;
+}
+
+.btn-3:hover::before {
+  transform: rotate(45deg) scale(1);
+}
+
+/* Button 4: Background Color Change with Animation */
+@keyframes colorChange {
+  0% {
+    background-color: #007bff;
+  }
+  50% {
+    background-color: #0056b3;
+  }
+  100% {
+    background-color: #003d80;
+  }
+}
+
+.btn-4 {
+  animation: colorChange 2s infinite;
+}
+
+.btn-4:hover {
+  animation-play-state: paused;
+}
+/* Add Final Touches */
+.btn-1, .btn-2, .btn-3, .btn-4 {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.btn-1:hover, .btn-2:hover, .btn-3:hover, .btn-4:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+/* Add Responsive Design Styles */
+/* @media (max-width: 768px) {
+  .container {
+    height: auto;
+    padding: 50px 20px;
+  }
+
+  .btn {
+    Button: 2rem;
+  }
+
+} */
